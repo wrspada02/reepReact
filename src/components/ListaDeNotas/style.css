@@ -1,6 +1,5 @@
 
     .lista-notas{
-        margin: 0 auto;
         display: grid;
         grid-template-columns: 33% 33% 33%;
         grid-template-rows: auto;
@@ -10,9 +9,10 @@
     .lista-notas__item{
         height: min-content;
         width: 50%;
-        margin: 0 6rem;
-        background-color: azure;
+        margin: 2rem 6rem;
+        background-color: rgb(255, 255, 157);
         border: solid 1px gray;
         border-radius: 0.5rem;
         padding: 1rem;
+        word-wrap: break-word;
     }

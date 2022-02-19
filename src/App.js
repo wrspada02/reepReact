@@ -8,11 +8,34 @@
     
 
     export class App extends Component{
+
+      constructor(){
+        super();
+        this.state = {
+          notas: []
+        };
+      }
+
+      criarNota(titulo, texto){
+        const novaNota = {titulo, texto};
+        const novoArrayNotas = [...this.state.notas, novaNota];
+        console.log(this.state);
+        const novoEstado = {
+          notas:novoArrayNotas
+        }
+        this.setState(novoEstado);
+      }
+
       render(){
+        console.log(`render`);
         return(
           <main className='conteudoPrincipal'>
-            <FormularioCadastro className="formulario-pagina"/>
-            <ListaDeNotas className="notas-pagina"/>
+            <FormularioCadastro 
+            criarNota = {this.criarNota.bind(this)}//Passando a function como propriedade do formulario, que pode ser acessada no arquivo deste componente
+            className="formulario-pagina"/>
+            <ListaDeNotas
+            notas = {this.state.notas} 
+            className="notas-pagina"/>
           </main>
         );
       }
