@@ -1,0 +1,11 @@
+
+    .card-nota{
+        color: #474242d8;
+        text-decoration: none;
+        font-size: 1.5em;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    .card-nota__titulo{
+        margin: 0.5rem 0;
+    }

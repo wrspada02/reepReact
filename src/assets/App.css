@@ -1,0 +1,10 @@
+
+    .conteudoPrincipal{
+        margin-top: 1rem;
+        display: grid;
+        grid-template-columns: 30% 70%;
+        grid-template-rows: auto;
+        grid-area: "formulario-pagina" 
+                    "notas-pagina";
+    }
+    

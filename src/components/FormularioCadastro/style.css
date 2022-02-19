@@ -1,0 +1,33 @@
+
+    .formulario-input__pai{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        border-right: solid 2px rgba(128, 128, 128, 0.301);
+        height: 100vh;
+    }
+
+    .formulario-input__titulo, .formulario-input-areaTitulo, .formulario--input__botao{
+        margin: 0.5rem 0;  
+    }
+
+    .formulario-input__titulo{
+        height: 2rem;
+    }
+
+    .formulario-input__titulo, .formulario-input-areaTitulo{
+        width: 80%;
+        max-width: 80%;
+        min-width: 80%;
+        background-color: floralwhite;
+        border-radius: 0.5rem;
+        font-size: 1.4rem;
+    }
+    
+    .formulario--input__botao{
+        background-color: darkgray;
+        height: 1.7rem;
+        font-size: 1.2rem;
+        width: 80%;
+    }
