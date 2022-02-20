@@ -26,6 +26,12 @@
         this.setState(novoEstado);
       }
 
+      deletarNota(index){
+        let arrayNotas = this.state.notas;
+        arrayNotas.splice(index, 1);
+        this.setState({notas: arrayNotas});
+      }
+
       render(){
         console.log(`render`);
         return(
@@ -34,6 +40,7 @@
             criarNota = {this.criarNota.bind(this)}//Passando a function como propriedade do formulario, que pode ser acessada no arquivo deste componente
             className="formulario-pagina"/>
             <ListaDeNotas
+            apagarNota={this.deletarNota.bind(this)}
             notas = {this.state.notas} 
             className="notas-pagina"/>
           </main>

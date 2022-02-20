@@ -13,6 +13,8 @@
                             <li className="lista-notas__item" key={index}>
                                 {console.log(nota.titulo, nota.texto)}
                                 <CardNota 
+                                indice={index}
+                                apagarNota={this.props.apagarNota}
                                 titulo={nota.titulo}
                                 texto={nota.texto}
                                 />

@@ -9,3 +9,9 @@
     .card-nota__titulo{
         margin: 0.5rem 0;
     }
+
+    .card-nota__cabecalho{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }

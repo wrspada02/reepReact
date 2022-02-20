@@ -1,15 +1,17 @@
 
     .lista-notas{
         display: grid;
-        grid-template-columns: 33% 33% 33%;
-        grid-template-rows: auto;
+        grid-template-columns: 20%  20%  20%  20%  20%;
+        grid-template-rows: min-content;
         grid-area: "lista-notas__item";
+        word-wrap: break-word;
     }
 
     .lista-notas__item{
         height: min-content;
-        width: 50%;
-        margin: 2rem 6rem;
+        width: 60%;
+        margin: 0 auto;
+        margin-bottom: 1.5rem;
         background-color: rgb(255, 255, 157);
         border: solid 1px gray;
         border-radius: 0.5rem;
