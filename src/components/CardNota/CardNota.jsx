@@ -16,8 +16,9 @@
                     <header className='card-nota__cabecalho'>
                         <h3 className='card-nota__titulo'>{this.props.titulo}</h3>
                         <DeleteSVG onClick={this.apagarNota.bind(this)}/>
+                        <h4>{this.props.categoria}</h4>
                     </header>
-                    <p>{this.props.texto}</p>
+                    <p className='card-nota__descricao'>{this.props.texto}</p>
                 </article>
             );
         }

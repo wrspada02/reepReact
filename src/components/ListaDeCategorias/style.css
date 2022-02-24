@@ -1,0 +1,21 @@
+
+    .conteudoCategorias, .conteudoCategorias__lista{
+        padding: 0 3%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .conteudoCategorias__lista{
+        flex-wrap: wrap;
+    }
+
+    .conteudoCategorias__lista--item{
+        margin: 0 2.5rem;
+        margin-bottom: 1rem;
+        border: solid 1px blue;
+        padding: 0.5rem;
+        border-radius: 1rem;
+        background-color: rgb(49, 49, 160);
+        color: white;
+    }

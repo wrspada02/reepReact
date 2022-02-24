@@ -8,7 +8,12 @@
             super(props);
             this.titulo = " ";
             this.texto = " ";
-            this.props = props;
+            this.categoria = "Sem categoria";
+        }
+
+        _handleMudancaCategoria(evento){
+            evento.stopPropagation();
+            this.categoria = evento.target.value;
         }
 
         _handleMudancaTitulo(evento){
@@ -26,13 +31,21 @@
         _criarNota(evento){
             evento.preventDefault();
             evento.stopPropagation();
-            this.props.criarNota(this.titulo, this.texto);
+            this.props.criarNota(this.titulo, this.texto, this.categoria);
         }
 
         render(){
             return(
                 <form className="formulario-input__pai"
                 onSubmit={this._criarNota.bind(this)}>
+                <select 
+                onChange={this._handleMudancaCategoria.bind(this)} 
+                className="formulario-input__select-categorias">
+                    <option>Sem categoria</option>
+                    {this.props.categorias.map((categoria) => {
+                        return <option>{categoria}</option>
+                    })}
+                </select>
                 <input 
                 className="formulario-input__titulo" 
                 type="text" 

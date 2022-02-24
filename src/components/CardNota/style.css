@@ -2,7 +2,6 @@
     .card-nota{
         color: #474242d8;
         text-decoration: none;
-        font-size: 1.5em;
         font-family: 'Times New Roman', Times, serif;
     }
 
@@ -10,8 +9,20 @@
         margin: 0.5rem 0;
     }
 
+    .card-nota__titulo{
+        font-size: 1.5rem;
+    }
+
+    .card-nota__descricao{
+        font-size: 1rem;
+    }
+
     .card-nota__cabecalho{
         display: flex;
         align-items: center;
         justify-content: space-between;
+    }
+
+    .card-nota__titulo, .card-nota__descricao{
+        word-wrap: break-word;
     }
