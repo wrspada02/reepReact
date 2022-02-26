@@ -4,6 +4,20 @@
 
     export class ListaDeCategorias extends Component {
 
+        constructor(){
+            super();
+            this.state = {categorias: []};
+        }
+
+        componentDidMount(){
+            this.props.categoria.inscrever(this._novasCategorias.bind(this));
+        }
+
+        _novasCategorias(categorias){
+            console.log(categorias);
+            this.setState({...this.state, categorias});
+        }
+
         _handlerEventoInput(evento){
             if(evento.key == 'Enter'){
                 let valorCategoria = evento.target.value;
@@ -15,7 +29,7 @@
             return (
                 <section className='conteudoCategorias'>
                     <ul className='conteudoCategorias__lista'>
-                    {this.props.categoria.map((categoria, index) => {
+                    {this.state.categorias.map((categoria, index) => {
                         return <li key={index} className='conteudoCategorias__lista--item'>{categoria}</li>
                     })}
                     </ul>

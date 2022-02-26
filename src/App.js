@@ -6,53 +6,33 @@ import React, { Component } from 'react';
 import "./assets/reset.css";
 import "./assets/App.css";
 import './assets/index.css';
+import Categorias from './dados/Categoria';
+import ArrayDeNotas from './dados/ArrayDeNotas';
 
 
 export class App extends Component {
 
   constructor() {
     super();
-    this.state = {
-      notas: [],
-      categorias: [],
+    this.categorias = new Categorias();
+    this.notas = new ArrayDeNotas();
     };
-  }
 
-  criarNota(titulo, texto, categoria) {
-    const novaNota = { titulo, texto, categoria };
-    const novoArrayNotas = [...this.state.notas, novaNota];
-    const novoEstado = {
-      notas: novoArrayNotas,
-    }
-    this.setState(novoEstado);
-  }
 
-  adicionarCategoria(nomeCategoria){
-    const novoArrayCategorias = [...this.state.categorias, nomeCategoria];
-    const novoEstado = {...this.state.categorias, categorias: novoArrayCategorias};
-    this.setState(novoEstado);
-  }
-
-  deletarNota(index) {
-    let arrayNotas = this.state.notas;
-    arrayNotas.splice(index, 1);
-    this.setState({ notas: arrayNotas });
-  }
-
-  render() {
+  render(){
     return (
       <main className='conteudoPagina'>
         <FormularioCadastro
-          categorias={this.state.categorias}
-          criarNota={this.criarNota.bind(this)}//Passando a function como propriedade do formulario, que pode ser acessada no arquivo deste componente
+          categorias={this.categorias}
+          criarNota={this.notas.adicionarNota.bind(this.notas)}//Passando a function como propriedade do formulario, que pode ser acessada no arquivo deste componente
           className="formulario-pagina" />
         <section className='conteudoPagina__principal'>
           <ListaDeCategorias 
-          adicionarCategoria={this.adicionarCategoria.bind(this)}
-          categoria={this.state.categorias}/>
+          adicionarCategoria={this.categorias.adicionarCategoria.bind(this.categorias)}
+          categoria={this.categorias}/>
           <ListaDeNotas
-            apagarNota={this.deletarNota.bind(this)}
-            notas={this.state.notas}
+            apagarNota={this.notas.apagarNota}
+            notas={this.notas}
             className="notas-pagina" />
         </section>
       </main>

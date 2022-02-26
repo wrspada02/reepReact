@@ -5,6 +5,19 @@
 
     export class ListaDeNotas extends Component{
 
+        constructor(){
+            super();
+            this.state = {notas: []};
+        }
+
+    componentDidMount(){
+        this.props.notas.inscrever(this._novasNotas.bind(this));
+      }
+  
+      _novasNotas(notas){
+        this.setState({...this.state, notas});
+      }
+
         render(){
             return (
                 <ul className="lista-notas">
